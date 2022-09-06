@@ -1,0 +1,25 @@
+{% extends "HuronesApp/index.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">ESTE ES EL APARTADO DE RESULTADOS</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+
+<h1>NOMBRES</h1>
+{% if nombre %}
+<ul>
+    {% for nombre in nombre %}
+        <li>Nombre: {{nombre.nombre}}</li>
+        <li>Edad: {{nombre.edad}}</li>
+        <li>Raza: {{nombre.raza}}</li>
+        <br>
+    {% endfor %}
+</ul>
+{% else %}
+<p>NO SE ENCONTRARON HURONES CON ESE NOMBRE</p>
+{% endif %}
+
+{% endblock %}

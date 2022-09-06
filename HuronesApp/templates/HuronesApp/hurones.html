@@ -1,0 +1,17 @@
+{% extends "HuronesApp/index.html" %}
+
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">LOS HURONES SON...</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<form action="{% url 'hurones' %}" method="POST"> {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <input type="submit" value="Guardar">
+</form>
+{{ mensaje }}
+{% endblock %}
